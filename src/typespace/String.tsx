@@ -1,6 +1,11 @@
 
 function String() {
 
+    /*********************************************************************
+     * 정리
+     * 
+     *********************************************************************/ 
+
     // let red: string = 'Red';
     // let green: string = "Green";
     // let yourColor: string = 'Your color is' + green;

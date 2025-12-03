@@ -1,5 +1,17 @@
 
 function Generic() {
+
+  /*********************************************************************
+   * 정리
+   * identity<T>(arg: T):T
+   * identity<T>
+   * 1. 함수에서 제네릭 사용하기
+   * 2. 인터페이스에서 제네릭 사용하기
+   * 3. 클래스에서 제네릭 사용하기
+   * 4. 제네릭 제약 조건(Generic Constraints)
+   * 5. 클래스 타입으로 제약 (생성자 제약)
+  *********************************************************************/ 
+
   // 제네릭은 재사용 가능한 컴포넌트(함수, 클래스, 인터페이스 등)을 만드는 도구입니다.
   // 실제 타입이 무엇인지 알지 못한 상태로 코드를 작성한 후, 사용할 때 타입을 지정할 수 있게 해줍니다.
   // 쉽게말해, 타입의 플레이스 홀더 라고 생각할 수 있습니다.
@@ -22,10 +34,6 @@ function Generic() {
   let output3 = identity(true); // T는 boolean으로 추론됨
   console.log(output3); // 출력 true
 
-  // identity<T>(arg: T):T
-  // identity<T>
-  // arg: T
-  // T
 
   // 2. 인터페이스에서 제네릭 사용하기
   // 인터페이스가 다룰 값의 타입을 나중에 결정하고 싶을때 사용합니다.
@@ -48,7 +56,7 @@ function Generic() {
   console.log(stringBox.value); // Hello
 
   // 2-3. error
-  // numberBox.value = 'wrong type';
+  // 🚨 numberBox.value = 'wrong type';
 
   // 3. 클래스에서 제네릭 사용하기
   // 클래스에서 다루는 속성이나 메서드의 타입을 유연하게 만들때 사용합니다.
@@ -94,7 +102,7 @@ function Generic() {
   // 4-1-3. 성공 : 객체도 length 속성을 명시하면 통과합니다.
   printLength({ length: 5, value: 'test' }) // 5
 
-  // 4-1-4. 실패 : 일반 숫자는 length 속성이 없으므로 에러 발생.
+  // 4-1-4. 실패 : 🚨 일반 숫자는 length 속성이 없으므로 에러 발생.
   // printLength(100)
 
   // 4-2. 두 제네릭 타입 간의 제약

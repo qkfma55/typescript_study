@@ -1,6 +1,13 @@
 
 function Intersection() {
 
+
+  /*********************************************************************
+   * 정리
+   * 1. 객체 인터페이스의 결합 (가장 일반적인 사용)
+   * 2. 함수 오버로딩 정의 (Function Overloads)
+  *********************************************************************/ 
+
   // 교차 타입 (Intersection Type)은 & 연산자를 사용하여 여러 타입을 하나로 결합하는 방식입니다.
   // 교차 타입으로 생성된 새로운 타입은 결합된 모든 타입의 모든 멤버를 포함해야 합니다.
 
@@ -60,15 +67,15 @@ function Intersection() {
 
   // 2-2. 실제 함수 구현부 (가장 넓은 타입으로 처리)
   function getConfigValue(param: string): string | number {
-      if (param === 'hex' || param === 'rgb') {
-          // mode 관련 호출 처리 (string 반환)
-          return "#FFFFFF"; 
-      } else if (param === 'px' || param === 'rem') {
-          // unit 관련 호출 처리 (number 반환)
-          return 16; 
-      }
-      // 예외 처리 (실제 구현에서는 이 부분에 대한 방어가 필요합니다)
-      throw new Error("Invalid config parameter");
+    if (param === 'hex' || param === 'rgb') {
+      // mode 관련 호출 처리 (string 반환)
+      return "#FFFFFF"; 
+    } else if (param === 'px' || param === 'rem') {
+      // unit 관련 호출 처리 (number 반환)
+      return 16; 
+    }
+    // 예외 처리 (실제 구현에서는 이 부분에 대한 방어가 필요합니다)
+    throw new Error("Invalid config parameter");
   }
 
   // 타입 단언을 통해 구현체를 교차 타입으로 지정 (강제매핑)
@@ -82,8 +89,8 @@ function Intersection() {
   let size = mergedConfigFunc('px'); 
   console.log(`Size: ${size}`);   // 출력: Size: 16
 
-  // color.length; // string 타입이므로 .length 사용 가능
-  // size.toFixed(0); // number 타입이므로 .toFixed 사용 가능
+  color.length; // string 타입이므로 .length 사용 가능
+  size.toFixed(0); // number 타입이므로 .toFixed 사용 가능
 
   return (
     <div>
