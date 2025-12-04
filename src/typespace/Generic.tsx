@@ -5,6 +5,7 @@ function Generic() {
    * 정리
    * identity<T>(arg: T):T
    * identity<T>
+   * <T>
    * 1. 함수에서 제네릭 사용하기
    * 2. 인터페이스에서 제네릭 사용하기
    * 3. 클래스에서 제네릭 사용하기
